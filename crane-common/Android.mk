@@ -14,6 +14,6 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifneq ($(filter cubieboard%,$(TARGET_DEVICE)),)
+ifneq ($(filter cubieboard%,$(DEVICE)),)
 include $(call all-makefiles-under,$(LOCAL_PATH))
 endif

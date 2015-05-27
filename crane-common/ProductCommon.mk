@@ -138,14 +138,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
     display.area_radio=display.area_radio
 
 # pre-installed apks
-PRODUCT_COPY_FILES += \
-	$(call find-copy-subdir-files,*.apk,$(LOCAL_PATH)/apk,system/preinstall)
+#PRODUCT_COPY_FILES += \
+#	$(call find-copy-subdir-files,*.apk,$(LOCAL_PATH)/apk,system/preinstall)
 
 #google service
-PRODUCT_COPY_FILES += \
-	$(call find-copy-subdir-files,*,$(LOCAL_PATH)/googleservice,system/app) \
-	$(call find-copy-subdir-files,*,$(LOCAL_PATH)/apkinstall,system/app) \
-	$(call find-copy-subdir-files,*,$(LOCAL_PATH)/apklib,system/lib)
+#PRODUCT_COPY_FILES += \
+#	$(call find-copy-subdir-files,*,$(LOCAL_PATH)/googleservice,system/app) \
+#	$(call find-copy-subdir-files,*,$(LOCAL_PATH)/apkinstall,system/app) \
+#	$(call find-copy-subdir-files,*,$(LOCAL_PATH)/apklib,system/lib)
 
 
 # Overrides

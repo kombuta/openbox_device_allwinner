@@ -6,8 +6,8 @@ $(call inherit-product, device/allwinner/crane-common/ProductCommon.mk)
 
 DEVICE_PACKAGE_OVERLAYS := device/allwinner/cubieboard/overlay
 
+#device/allwinner/cubieboard/kernel:kernel 
 PRODUCT_COPY_FILES += \
-	device/allwinner/cubieboard/kernel:kernel \
 	device/allwinner/cubieboard/recovery.fstab:recovery.fstab \
 	frameworks/base/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
 
@@ -32,19 +32,33 @@ PRODUCT_COPY_FILES += \
     device/allwinner/cubieboard/hwc_big.pal:system/usr/hwc/hwc_big.pal
 
 # pre-installed apks
-PRODUCT_COPY_FILES += \
-	$(call find-copy-subdir-files,*.apk,$(LOCAL_PATH)/apk,system/preinstall)
+#PRODUCT_COPY_FILES += \
+#	$(call find-copy-subdir-files,*.apk,$(LOCAL_PATH)/apk,system/preinstall)
 
 #google service
-PRODUCT_COPY_FILES += \
-	$(call find-copy-subdir-files,*,$(LOCAL_PATH)/googleservice,system/app)
+#PRODUCT_COPY_FILES += \
+#	$(call find-copy-subdir-files,*,$(LOCAL_PATH)/googleservice,system/app)
 
 PRODUCT_COPY_FILES += \
 	device/allwinner/cubieboard/vold.fstab:system/etc/vold.fstab
 
-PRODUCT_PACKAGES += \
-		gatord \
-        TvdLauncher
+#Bootloader files
+PRODUCT_COPY_FILES += \
+	device/allwinner/cubieboard/bootloader/script.bin:boot/script.bin \
+	device/allwinner/cubieboard/bootloader/script.fex:boot/script.fex \
+	device/allwinner/cubieboard/bootloader/script_HDMI.bin:boot/script_HDMI.bin \
+	device/allwinner/cubieboard/bootloader/uEnv_recovery.txt:boot/uEnv_recovery.txt \
+	device/allwinner/cubieboard/bootloader/uEnv.txt:boot/uEnv.txt \
+	device/allwinner/cubieboard/bootloader/uImage:boot/uImage \
+	device/allwinner/cubieboard/boot.chk:root/boot.chk 
+	#device/allwinner/cubieboard/bootloader/nand.ko:root/nand.ko 
+
+#extra libs
+
+
+#PRODUCT_PACKAGES += \
+#		gatord \
+#        TvdLauncher
 
 PRODUCT_PROPERTY_OVERRIDES += \
 	persist.sys.usb.config=mass_storage,adb \
@@ -74,7 +88,7 @@ PRODUCT_CHARACTERISTICS := tablet
 
 # Overrides
 PRODUCT_BRAND  := allwinners
-PRODUCT_NAME   := cubieboard
+PRODUCT_NAME   := full_cubieboard
 PRODUCT_DEVICE := cubieboard
 PRODUCT_MODEL  := cubieboard
 

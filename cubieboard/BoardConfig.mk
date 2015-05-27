@@ -8,7 +8,7 @@ include device/allwinner/crane-common/BoardConfigCommon.mk
 BUILD_NUMBER := "4.0"
 
 # image related
-TARGET_NO_BOOTLOADER := true
+TARGET_NO_BOOTLOADER := false
 TARGET_NO_RECOVERY := false
 TARGET_NO_KERNEL := false
 
